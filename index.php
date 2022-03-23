@@ -6,7 +6,7 @@ $q = $db->prepare("SELECT * FROM staff");
 if ($q && $q->execute()) {
     $result = $q->get_result();
     while ($staff = $result->fetch_assoc()) {
-        $id = $staff['id'];
+        $staffId = $staff['id'];
         $firstName = $staff['firstName'];
         $lastName = $staff['lastName'];
         echo "Lekarz $firstName $lastName<br>";
@@ -31,3 +31,4 @@ if ($q && $q->execute()) {
 
     die("Błąd pobierania z bazy danych");
 }
+?>
