@@ -15,5 +15,3 @@ if($q->execute()){
 
     die("Błąd pobierania z bazy danych");
 }
-
-?>
