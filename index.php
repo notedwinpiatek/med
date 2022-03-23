@@ -18,9 +18,9 @@ if ($q && $q->execute()) {
                 $appointmentsId = $appointment['id'];
                 $appointmentDate = $appointment['date'];
                 $appointmentTimeStamp = strtotime($appointmentDate);
-                echo "<button style=\"margin:10px\">";
+                echo "<a href=\"appointment.phpstyle=\"margin:10px; display: \">";
                 echo date("j.m H:i", $appointmentTimeStamp);
-                echo "</button>";
+                echo "</a>";
             }
             echo "<br>";
         } else {
