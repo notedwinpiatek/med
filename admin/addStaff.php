@@ -2,7 +2,7 @@
 if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
     $db = new mysqli("localhost", "root", "", "med");
     $q = $db->prepare("INSERT INTO staff VALUES(NULL, ?, ?");
-    $q->bind_param("SS", $_REQUEST['firstName'], $_REQUEST['lastName']);
+    $q->bind_param("ss", $_REQUEST['firstName'], $_REQUEST['lastName']);
     if($q->execute()) {
         echo "Dodano nowy personel";
     }
