@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 $db = new mysqli("localhost", "root", "", "med");
@@ -45,7 +45,7 @@ if($q && $q->execute()) {
     die("Błąd pobierania lekarzy z bazy danych");
 }
 
-=======
+
 <?php
 
 $db = new mysqli("localhost", "root", "", "med");
@@ -78,5 +78,4 @@ if($q && $q->execute()) {
     die("Błąd pobierania lekarzy z bazy danych");
 }
 
->>>>>>> b7b7fe91fbf28868c340787505a64d511b3430ff
 ?>

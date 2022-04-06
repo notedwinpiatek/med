@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
     $db = new mysqli("localhost", "root", "", "med");
@@ -19,7 +18,6 @@ if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
     ';
 }
 ?>
-=======
 <?php
 if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
     $db = new mysqli("localhost", "root", "", "med");
@@ -40,4 +38,3 @@ if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
     ';
 }
 ?>
->>>>>>> b7b7fe91fbf28868c340787505a64d511b3430ff

@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 <?php
-
 $appointmentId = $_REQUEST['id'];
-
 ?>
-
 <div style="display:flex; flex-direction: row">
     <div style="flex-grow:1; text-align:center">
     <h1>Zaloguj się</h1>
@@ -34,13 +30,9 @@ $appointmentId = $_REQUEST['id'];
         <input type="submit" value="Zarejestruj się">
     </form>
     </div>
-=======
 <?php
 $appointmentId = $_REQUEST['id'];
-
-
 ?>
-
 <div style="display: flex; flex-direction: row">
     <div style="flex-grow: 1; text-align:center">
     <h1>Zaloguj się</h1>
@@ -57,5 +49,4 @@ $appointmentId = $_REQUEST['id'];
     <div style="flex-grow: 1;">
     <h1>Zarejestruj się</h1>
 </div>
->>>>>>> b7b7fe91fbf28868c340787505a64d511b3430ff
 </div>
