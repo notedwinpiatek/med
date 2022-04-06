@@ -45,9 +45,6 @@ if($q && $q->execute()) {
     die("Błąd pobierania lekarzy z bazy danych");
 }
 
-
-<?php
-
 $db = new mysqli("localhost", "root", "", "med");
 $q = $db->prepare("SELECT * FROM staff");
 if($q && $q->execute()) {
