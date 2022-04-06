@@ -2,6 +2,7 @@
 $db = new mysqli("localhost", "root", "", "med");
 $staffId = $_REQUEST['id'];
 
+
 $q = $db->prepare("SELECT appointment.id, appointment.date, patient.firstName, patient.lastName FROM appointment 
                     LEFT JOIN patientappointment ON appointment.id = patientappointment.appointment_id
                     LEFT JOIN patient ON patientappointment.patient_id = patient.id

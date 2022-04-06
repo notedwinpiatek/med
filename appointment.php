@@ -1,7 +1,7 @@
 
 <?php
 $db = new mysqli("localhost", "root", "", "med");
-$appointmentId = $_REQUEST['appointmentID'];
+$appointmentId = $_REQUEST['appointmentId'];
 $q = $db->prepare("SELECT * FROM appointment WHERE id = ?");
 $q->bind_param("i", $appointmentId);
 if($q && $q->execute()) {
