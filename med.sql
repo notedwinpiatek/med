@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 30 Mar 2022, 11:16
+-- Czas generowania: 30 Mar 2022, 12:22
 -- Wersja serwera: 10.4.22-MariaDB
 -- Wersja PHP: 8.0.15
 
@@ -52,16 +52,20 @@ CREATE TABLE `patient` (
   `id` int(11) NOT NULL,
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
-  `phone` varchar(32) NOT NULL
+  `phone` varchar(32) NOT NULL,
+  `pesel` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `patient`
 --
 
-INSERT INTO `patient` (`id`, `firstName`, `lastName`, `phone`) VALUES
-(1, 'Stefek', 'Burczymucha', '+48666666666'),
-(2, 'Edwin', 'Piatek', '+48789456123');
+INSERT INTO `patient` (`id`, `firstName`, `lastName`, `phone`, `pesel`) VALUES
+(6, 'Krystian', 'Zelmanski', '123456789', ''),
+(7, 'Karol ', 'Złotowski', '147258369', '12345'),
+(8, 'Edwin', 'Piątek', '111222333', ''),
+(9, 'Dawid', 'Karaluch', '666555444', '00000000000'),
+(10, 'Krystyna', 'Zak', '123654789', '258369147');
 
 -- --------------------------------------------------------
 
@@ -80,18 +84,12 @@ CREATE TABLE `patientappointment` (
 --
 
 INSERT INTO `patientappointment` (`id`, `patient_id`, `appointment_id`) VALUES
-(1, 1, 1),
-(2, 2, 2);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `pesel`
---
-
-CREATE TABLE `pesel` (
-  `pesel` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(6, 6, 1),
+(7, 7, 2),
+(8, 8, 3),
+(9, 10, 2),
+(10, 10, 2),
+(11, 7, 3);
 
 -- --------------------------------------------------------
 
@@ -159,13 +157,13 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT dla tabeli `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `patientappointment`
 --
 ALTER TABLE `patientappointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `staff`
