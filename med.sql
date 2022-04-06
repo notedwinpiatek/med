@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Czas generowania: 30 Mar 2022, 12:22
+=======
+-- Czas generowania: 30 Mar 2022, 11:16
+>>>>>>> b7b7fe91fbf28868c340787505a64d511b3430ff
 -- Wersja serwera: 10.4.22-MariaDB
 -- Wersja PHP: 8.0.15
 
@@ -84,12 +88,27 @@ CREATE TABLE `patientappointment` (
 --
 
 INSERT INTO `patientappointment` (`id`, `patient_id`, `appointment_id`) VALUES
+<<<<<<< HEAD
 (6, 6, 1),
 (7, 7, 2),
 (8, 8, 3),
 (9, 10, 2),
 (10, 10, 2),
 (11, 7, 3);
+=======
+(1, 1, 1),
+(2, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `pesel`
+--
+
+CREATE TABLE `pesel` (
+  `pesel` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+>>>>>>> b7b7fe91fbf28868c340787505a64d511b3430ff
 
 -- --------------------------------------------------------
 

@@ -5,6 +5,7 @@ $q->execute();
 $staffResult = $q->get_result();
 ?>
 <form action="addAppointments.php"> 
+    <label for="staffId"> Wybierz Lekarza</label>
     <select name="staffId" id="staffId">
         <?php
             while($staffRow = $staffResult->fetch_assoc()) {
