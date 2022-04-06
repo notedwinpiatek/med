@@ -42,5 +42,4 @@ if(isset($_REQUEST['staffId']) && isset($_REQUEST['startTime']) && isset($_REQUE
         $q->execute();
     }
 }
-
 ?>
