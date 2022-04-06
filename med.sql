@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-
--- Czas generowania: 30 Mar 2022, 12:22
-=======
--- Czas generowania: 30 Mar 2022, 11:16
-
+-- Czas generowania: 06 Kwi 2022, 11:25
 -- Wersja serwera: 10.4.22-MariaDB
 -- Wersja PHP: 8.0.15
 
@@ -44,7 +40,15 @@ CREATE TABLE `appointment` (
 INSERT INTO `appointment` (`id`, `staff_id`, `date`) VALUES
 (1, 1, '2022-03-24 12:00:00'),
 (2, 1, '2022-03-24 14:00:00'),
-(3, 2, '2022-03-24 13:00:00');
+(3, 2, '2022-03-24 13:00:00'),
+(4, 5, '2022-04-06 12:22:00'),
+(5, 5, '2022-04-06 12:37:00'),
+(6, 5, '2022-04-06 12:52:00'),
+(7, 5, '2022-04-06 13:07:00'),
+(8, 5, '2022-04-06 13:22:00'),
+(9, 5, '2022-04-06 13:37:00'),
+(10, 5, '2022-04-06 13:52:00'),
+(11, 5, '2022-04-06 14:07:00');
 
 -- --------------------------------------------------------
 
@@ -88,27 +92,12 @@ CREATE TABLE `patientappointment` (
 --
 
 INSERT INTO `patientappointment` (`id`, `patient_id`, `appointment_id`) VALUES
-<<<<<<< HEAD
 (6, 6, 1),
 (7, 7, 2),
 (8, 8, 3),
 (9, 10, 2),
 (10, 10, 2),
 (11, 7, 3);
-=======
-(1, 1, 1),
-(2, 2, 2);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `pesel`
---
-
-CREATE TABLE `pesel` (
-  `pesel` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
->>>>>>> b7b7fe91fbf28868c340787505a64d511b3430ff
 
 -- --------------------------------------------------------
 
@@ -130,7 +119,8 @@ INSERT INTO `staff` (`id`, `firstName`, `lastName`) VALUES
 (1, 'Jan', 'Kowalski'),
 (2, 'Adam', 'Nowak'),
 (3, 'Iwona', 'Tabletka'),
-(4, 'Piotr', 'Wierciszpara');
+(4, 'Piotr', 'Wierciszpara'),
+(5, 'Maciej ', 'Wróbel');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -170,7 +160,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT dla tabeli `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `patient`
@@ -188,7 +178,7 @@ ALTER TABLE `patientappointment`
 -- AUTO_INCREMENT dla tabeli `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ograniczenia dla zrzutów tabel
