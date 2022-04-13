@@ -1,2 +1,2 @@
-templates_c/*
-vendor/*
+vendor
+smarty/templates_c/*
