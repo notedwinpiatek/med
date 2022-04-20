@@ -8,7 +8,7 @@ if($q && $q->execute()) {
     $appointment = $q->get_result()->fetch_assoc();
     $appointmentDate = $appointment['date'];
     $appointmentTimestamp = strtotime($appointmentDate);
-    ///bez sensu - jeszcze nic nie zapisaliśmy! 
+    //nic nie robi
     //echo "Zapis na wizytę w terminie ".date("j.m H:i", $appointmentTimestamp)."<br>";
 }
 if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])) {
