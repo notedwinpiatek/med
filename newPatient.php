@@ -1,7 +1,17 @@
 
 <?php
 if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])){
-
+    $p = newPatient();
+    $p->setFirstName($_REQUEST['firstName']);
+    $p->setLastName($_REQUEST['lastName']);
+    $p->setPhone($_REQUEST['phone']);
+    $p->setPesel($_REQUEST['pesel']);
+    if($p->save()) [
+        $smarty->assign("message", "Pacjent dodany do systemu");
+        $smarty->assign("returnUrl", "newPatient.php");
+        $smarty->assign("message.tpl");
+    ]
+/*
     $db = new mysqli("localhost", "root", "", "med");
     $q = $db->prepare("INSERT INTO patient VALUES (NULL, ?, ?, ? , ?)");
     $q->bind_param("ssss", $_REQUEST['firstName'], $_REQUEST['lastName'],
@@ -9,8 +19,7 @@ if(isset($_REQUEST['firstName']) && isset($_REQUEST['lastName'])){
     if($q->execute()) {
         echo "Pacjent dodany do bazy";
     }
-
-
+*/
 }else {
     echo '
     <form action="newPatient.php" method="post">

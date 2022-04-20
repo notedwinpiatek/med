@@ -1,5 +1,6 @@
 <?php
 
+require_once('./model/patient.class.php');
 require __DIR__ . '/vendor/autoload.php';
 
 $smarty = new Smarty();
