@@ -7,15 +7,19 @@ class Patient {
     private $pesel;
     private $db;
 
-    function __construct() {
+    function __construct()
+    {
         global $db;
         $this->db = $db;
     }
+    function getId() : int {
+        return $this->id;
+    }
     function setFirstName(string $firstName) {
-        $this->firstname = $firstName;
+        $this->firstName = $firstName;
     }
     function setLastName(string $lastName) {
-        $this->lastname = $lastName;
+        $this->lastName = $lastName;
     }
     function setPhone(string $phone) {
         $this->phone = $phone;
@@ -23,19 +27,22 @@ class Patient {
     function setPesel(string $pesel) {
         if(strlen($pesel) == 11) {
             $this->pesel = $pesel;
-        }else {
-            throw new LenghtException("Pesel ma nieprawidłową długość!");
+        } else {
+            throw new LengthException("Pesel ma nieprawidłową długość!");
         }
         
     }
-
+    
     function save() : bool {
-         $q = $db->prepare("INSERT INTO patient VALUES (NULL, ?, ?, ? , ?)");
-         $q->bind_param("ssss", $this->firstName, $this->lastName, $this->phone, $this->pesel);
-         return $q->execute();
+        $q = $this->db->prepare("INSERT INTO patient VALUES (NULL, ?, ?, ?, ?)");
+        $q->bind_param("ssss", $this->firstName, $this->lastName, $this->phone, $this->pesel);
+        $result = $q->execute();
+        //pobierz id wstawionego pacjenta
+        $this->id = $this->db->insert_id;
+        return $result;
     }
     function load() {
-        $q = $db->prepare("SELECT * FROM patient WHERE id = ?");
+        $q = $this->db->prepare("SELECT * FROM patient WHERE id = ? LIMIT 1");
         $q->bind_param("i", $this->id);
         $q->execute();
         $result = $q->get_result();
